@@ -1,0 +1,23 @@
+{
+    "label": "Elections Theme",
+    "name": "elections",
+    "version": "1.0.22",
+    "author": "Aleksandar Jelicic <aleksandar.jelicic@sourcefabric.org>",
+    "repository": {
+        "type": "git",
+        "url": "git@github.com:liveblog/lb-theme-elections.git"
+    },
+    "license": "AGPL-3.0",
+    "extends": "classic",
+    "devStyles": [
+        "styles/embed.css"
+    ],
+    "styles": [
+        "dist/styles.min.css"
+    ],
+    "devScripts": [],
+    "scripts": [
+        "dist/scripts.min.js"
+    ],
+    "options": []
+}

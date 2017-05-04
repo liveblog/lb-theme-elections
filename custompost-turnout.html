@@ -1,0 +1,123 @@
+<div class="turnout">
+    <h3 class="turnout__headline">Turnout</h3>
+    <p class="turnout__subheadline">Turnout updated
+        <input name="$timestamp" />
+    </p>
+    <div class="turnout__results">
+        <div class="turnout__result">
+            <label for="year.result1" hide-render="">Result 1</label>
+            <input class="turnout__resultScore" placeholder="Result 1" name="$year.result1">
+            <label for="" hide-render=""></label>
+            <div class="turnout__resultUntil"></div>
+            <div class="turnout__resultItem">
+                <div class="turnout__resultBarWrap">
+                    <div class="turnout__resultBar" style="height: 0%"></div>
+                </div>
+            </div>
+            <label for="year.year1" hide-render="">Year 1</label>
+            <input class="turnout__resultYear" placeholder="Year 1" name="$year.year1">
+        </div>
+        <div class="turnout__result">
+            <label for="year.result2" hide-render="">Result 2</label>
+            <input class="turnout__resultScore" placeholder="Result 2" name="$year.result2">
+            <label for="" hide-render=""></label>
+            <div class="turnout__resultUntil"></div>
+            <div class="turnout__resultItem">
+                <div class="turnout__resultBarWrap turnout__resultBarWrap--highest">
+                    <div class="turnout__resultBar" style="height: 0%"></div>
+                </div>
+            </div>
+            <label for="year.year2" hide-render="">Year 2</label>
+            <input class="turnout__resultYear" placeholder="Year 2" name="$year.year2">
+        </div>
+        <div class="turnout__result">
+            <label for="year.result3" hide-render="">Result 3</label>
+            <input class="turnout__resultScore" placeholder="Result 3" name="$year.result3">
+            <label for="" hide-render=""></label>
+            <div class="turnout__resultUntil"></div>
+            <div class="turnout__resultItem">
+                <div class="turnout__resultBarWrap">
+                    <div class="turnout__resultBar" style="height: 0%"></div>
+                </div>
+            </div>
+            <label for="year.year3" hide-render="">Year 3</label>
+            <input class="turnout__resultYear" placeholder="Year 3" name="$year.year3">
+        </div>
+        <div class="turnout__result">
+
+            <label for="year.result3" hide-render="">Result 4</label>
+            <input class="turnout__resultScore" placeholder="Result 4" name="$year.result4">
+            <label for="year.until4" hide-render="">Until</label>
+            <div class="turnout__resultUntil">
+                <input placeholder="Until" name="$year.until4">
+            </div>
+            <div class="turnout__resultItem">
+                <div class="turnout__resultBarWrap">
+                    <div class="turnout__resultBar" style="height: 0%"></div>
+                </div>
+            </div>
+            <label for="year.year4" hide-render="">Year 4</label>
+            <input class="turnout__resultYear" placeholder="Year 4" name="$year.year4">
+
+        </div>
+    </div>
+</div>
+
+<style type="text/css">
+    .turnout__results {
+        display: flex;
+        text-align: center;
+    }
+    .turnout__result {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        flex: 0 1 20%;
+        padding: 0px;
+    }
+    .turnout__resultUntil {
+        height: 18px;
+        white-space: nowrap;
+    }
+    .turnout__resultItem {
+        display: flex;
+        width: 100%;
+        justify-content: center;
+        margin: 10px 0px;
+        border-top: 1px solid #d6d6d6;
+        border-bottom: 1px solid #d6d6d6;
+    }
+    .turnout__resultBarWrap {
+        position: relative;
+        flex: 0 1 auto;
+        display: block;
+        margin: 0px;
+        background: #d9d9d9;
+        width: 20px;
+        height: 200px;
+        z-index: 1;
+    }
+    .turnout__resultBar {
+        display: block;
+        width: 20px;
+        background: #6dc77a;
+        position: absolute;
+        bottom: 0px;
+    }
+    .turnout__resultItem
+</style>
+
+<script type="text/javascript">
+    function triggerScoreResults() {
+        $('.turnout__result').each(function() {
+            var value = $(this).find('.turnout__resultScore')[0].innerHTML;
+            $(this).find('.turnout__resultBar').animate({
+                'height': value
+            }, 500);
+        });
+    }
+
+    $(document).ready(function() {
+        return triggerScoreResults();
+    });
+</script>
