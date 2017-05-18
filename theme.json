@@ -1,7 +1,7 @@
 {
     "label": "Elections Theme",
     "name": "elections",
-    "version": "1.0.22",
+    "version": "1.0.24",
     "author": "Aleksandar Jelicic <aleksandar.jelicic@sourcefabric.org>",
     "repository": {
         "type": "git",
@@ -16,8 +16,6 @@
         "dist/styles.min.css"
     ],
     "devScripts": [],
-    "scripts": [
-        "dist/scripts.min.js"
-    ],
+    "scripts": [],
     "options": []
 }
