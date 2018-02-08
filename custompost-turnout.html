@@ -1,8 +1,8 @@
 <div class="turnout">
-    <h3 class="turnout__headline">Turnout</h3>
-    <p class="turnout__subheadline">Turnout updated
-        <input name="$timestamp" />
-    </p>
+    <h4 class="turnout__headline">Turnout</h4>
+    <label for="turnout.text" hide-render="">Additional text</label>
+    <input class="turnout__subheadline" placeholder=" " name="$turnout.text">
+    
     <div class="turnout__results">
         <div class="turnout__result">
             <label for="year.result1" hide-render="">Result 1</label>
@@ -11,7 +11,7 @@
             <div class="turnout__resultUntil"></div>
             <div class="turnout__resultItem">
                 <div class="turnout__resultBarWrap">
-                    <div class="turnout__resultBar" style="height: 0%"></div>
+                    <div class="turnout__resultBar" style="height: @year.result1"></div>
                 </div>
             </div>
             <label for="year.year1" hide-render="">Year 1</label>
@@ -23,8 +23,8 @@
             <label for="" hide-render=""></label>
             <div class="turnout__resultUntil"></div>
             <div class="turnout__resultItem">
-                <div class="turnout__resultBarWrap turnout__resultBarWrap--highest">
-                    <div class="turnout__resultBar" style="height: 0%"></div>
+                <div class="turnout__resultBarWrap">
+                    <div class="turnout__resultBar" style="height: @year.result2"></div>
                 </div>
             </div>
             <label for="year.year2" hide-render="">Year 2</label>
@@ -37,7 +37,7 @@
             <div class="turnout__resultUntil"></div>
             <div class="turnout__resultItem">
                 <div class="turnout__resultBarWrap">
-                    <div class="turnout__resultBar" style="height: 0%"></div>
+                    <div class="turnout__resultBar" style="height: @year.result3"></div>
                 </div>
             </div>
             <label for="year.year3" hide-render="">Year 3</label>
@@ -52,8 +52,8 @@
                 <input placeholder="Until" name="$year.until4">
             </div>
             <div class="turnout__resultItem">
-                <div class="turnout__resultBarWrap">
-                    <div class="turnout__resultBar" style="height: 0%"></div>
+                <div class="turnout__resultBarWrap turnout__resultBarWrap--latest">
+                    <div class="turnout__resultBar" style="height: @year.result4"></div>
                 </div>
             </div>
             <label for="year.year4" hide-render="">Year 4</label>
@@ -64,60 +64,87 @@
 </div>
 
 <style type="text/css">
-    .turnout__results {
-        display: flex;
-        text-align: center;
-    }
-    .turnout__result {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        flex: 0 1 20%;
-        padding: 0px;
-    }
-    .turnout__resultUntil {
-        height: 18px;
-        white-space: nowrap;
-    }
-    .turnout__resultItem {
-        display: flex;
-        width: 100%;
-        justify-content: center;
-        margin: 10px 0px;
-        border-top: 1px solid #d6d6d6;
-        border-bottom: 1px solid #d6d6d6;
-    }
-    .turnout__resultBarWrap {
-        position: relative;
-        flex: 0 1 auto;
-        display: block;
-        margin: 0px;
-        background: #d9d9d9;
-        width: 20px;
-        height: 200px;
-        z-index: 1;
-    }
-    .turnout__resultBar {
-        display: block;
-        width: 20px;
-        background: #6dc77a;
-        position: absolute;
-        bottom: 0px;
-    }
-    .turnout__resultItem
+.turnout .turnout__results {
+    display: flex;
+    text-align: center;
+    max-width: 700px;
+    justify-content: space-between;
+    margin: 25px 0px 0px 0px;
+}
+.turnout .turnout__result {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex: 0 1 20%;
+    flex: 1 1 20%;
+    padding: 0px;
+}
+.turnout .turnout__resultScore {
+    font-weight: bold;
+}
+.turnout .turnout__resultUntil {
+    height: 18px;
+    white-space: nowrap;
+    margin-top: 5px;
+}
+.turnout .turnout__resultItem {
+    position: relative;
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    margin: 10px 0px;
+    border-top: 1px dotted #d6d6d6;
+    border-bottom: 1px solid #d6d6d6;
+
+}
+.turnout .turnout__resultBarWrap {
+    position: relative;
+    flex: 0 1 auto;
+    display: block;
+    margin: 0px;
+    background: transparent;
+    width: 25px;
+    height: 200px;
+    z-index: 1;
+    height: 250px;
+}
+.editor-holder .turnout .turnout__resultBarWrap {
+    background: #ececec;
+}
+.turnout .turnout__resultBar {
+    display: block;
+    width: 25px;
+    background: #e0dfdf;
+    position: absolute;
+    opacity: 0.7;
+    bottom: -2px;
+}
+
+.turnout .turnout__resultBarWrap--latest .turnout__resultBar {
+    background: #66cfa0;
+    opacity: 0.9;
+}
+.turnout .turnout__resultItem:before {
+    position: absolute;
+    content: " ";
+    display: block;
+    height: 1px;
+    border-top: 1px dotted #d6d6d6;
+    top: 33%;
+    left: 0px;
+    right: 0px;
+    text-align: center;
+}
+
+.turnout .turnout__resultItem:after {
+    position: absolute;
+    content: " ";
+    display: block;
+    height: 1px;
+    border-top: 1px dotted #d6d6d6;
+    top: 66%;
+    left: 0px;
+    right: 0px;
+    text-align: center;
+}
 </style>
-
-<script type="text/javascript">
-    function triggerScoreResults() {
-        $('.turnout__result').each(function() {
-            var value = $(this).find('.turnout__resultScore')[0].innerHTML;
-            $(this).find('.turnout__resultBar').animate({
-                'height': value
-            }, 500);
-        });
-    }
-
-    $(document).ready(function() {
-        return triggerScoreResults();
-    });
-</script>

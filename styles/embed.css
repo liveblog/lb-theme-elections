@@ -17,14 +17,29 @@ body a:hover {
 }
 
 body article {
-    font-size: 20px;
+    font-size: 1em;
     font-weight: 300;
     line-height: 140%;
 }
 
+article h4, article h5 {
+    font-family: 'Droid Serif',serif;
+    font-size: 1.3em;
+    color: #415175;
+    font-weight: 300;
+}
+
+article h5 {
+    font-size: 1.2em;
+}
+
+body article blockquote {
+    margin-left: 0px;
+}
+
 body article blockquote p {
     font-family: 'Droid Serif', serif;
-    font-size: 34px;
+    font-size: 28px;
     color: #777;
     font-style: italic;
     margin-top: 0px;
@@ -32,10 +47,12 @@ body article blockquote p {
 }
 
 body article blockquote p:before {
+    font-family: 'Droid Serif', serif;    
     content: "”";
     font-size: 200px;
     color: #a0a8ba;
     position: absolute;
+    top: auto;
     right: 0px;
     bottom: 0px;
     left: auto;
@@ -43,6 +60,8 @@ body article blockquote p:before {
 }
 
 body article blockquote h4 {
+    color: #333;
+    font-weight: 300;
     font-style: italic;
 }
 
@@ -100,6 +119,7 @@ body .lb-timeline__logo {
     position: absolute;
     top: 30px;
     right: 30px;
+    max-width: none;
 }
 
 body .lb-timeline__logo img {
@@ -265,6 +285,11 @@ body .lb-post {
     border-bottom: none;
 }
 
+body .load-new-posts {
+    font-size: 1em;
+    padding: 30px 10px;
+}
+
 body .lb-item {
     margin: 0 auto !important;
     max-width: 650px;
@@ -301,7 +326,7 @@ body .lb-author__avatar {
 }
 
 body .lb-author__date, body .lb-author__name {
-    font-size: 18px;
+    font-size: 0.9em;
     font-weight: 400;
     margin-bottom: 20px;
 }
@@ -313,7 +338,7 @@ body .lb-gallery {
 
 body .item--embed__title {
     font-family: 'Droid Serif', serif;
-    font-size: 1.4em;
+    font-size: 1.2em;
     color: #415175;
     font-weight: 300;
 }
@@ -347,190 +372,150 @@ body .pin-posts .show-author-avatar .lb-author, body .pin-posts .show-author-ava
 
 /* Freetypes styles */
 
-body .results__headline {
+body .results {
+    max-width: none;
+}
+
+body .results .results__headline, body .turnout .turnout__headline {
     font-family: 'Droid Serif', serif;
-    font-size: 42px;
+    font-size: 2.1em;
     color: #415175;
     text-align: center;
     line-height: 140%;
 }
 
-body .results__subheadline {
+body .results .results__subheadline {
+    display: block;
     text-align: center;
     margin: 0px;
 }
 
-body .result__item {
-    display: flex;
-    align-items: center;
+body .results .result__item {
     margin: 40px 0px;
 }
 
-body .result__candidateWrap {
-    flex: 1 1 auto;
-    margin-top: 40px;
+body .results .result__candidateWrap {
     margin-left: -7px;
     z-index: 1;
 }
 
-body .result__item--blue .result__itemImage {
-    border: 5px solid #60a2d8;
-}
-
-body .result__item--blue .result__candidateBar {
+body .results .result__item--candidate1 .result__candidateBar {
     background: #60a2d8;
 }
 
-body .result__item--orange .result__itemImage {
+body .results .result__item--candidate2 .result__itemImage {
     border: 5px solid #e7543c;
 }
 
-body .result__item--orange .result__candidateBar {
+body .results .result__item--candidate2 .result__candidateBar {
     background: #e7543c;
 }
 
-body .result__item--red .result__itemImage {
+body .results .result__item--candidate3 .result__itemImage {
     border: 5px solid #d54444;
 }
 
-body .result__item--red .result__candidateBar {
+body .results .result__item--candidate3 .result__candidateBar {
     background: #d54444;
 }
 
-body .result__item--yellow .result__itemImage {
+body .results .result__item--candidate4 .result__itemImage {
     border: 5px solid #ffe25a;
 }
 
-body .result__item--yellow .result__candidateBar {
+body .results .result__item--candidate4 .result__candidateBar {
     background: #ffe25a;
 }
 
-body .result__itemImage {
+body .results .result__itemImage {
     flex: 1 0 auto;
     width: 128px;
     height: 128px;
+    max-width: 128px;
+    margin-right: 0px;
     border-radius: 100%;
     overflow: hidden;
     border: 5px solid #60a2d8;
     z-index: 2;
 }
 
-body .result__candidateBarWrap {
+body .results .result__candidateBarWrap {
     height: 30px;
 }
 
-body .result__candidateBar {
+body .results .result__candidateBar {
     height: 30px;
 }
 
-body .result__candidateName {
+body .results .result__candidateParty {
+    font-size: 18px;
+    margin-left: 20px;
+}
+
+body .results .result__candidateName {
     font-family: 'Droid Serif', serif;
     font-size: 20px;
     font-weight: 700;
     margin-left: 20px;
 }
 
-body .result__candidateScore {
+body .results .result__candidateScore {
     font-family: 'Droid Serif', serif;
-    font-size: 36px;
+    font-size: 1.8em;
     font-weight: 700;
-    float: right;
+    line-height: 20px;
 }
 
-body .result__pollSource {
+body .results .result__pollSource {
     font-size: 18px;
     font-style: italic;
 }
 
-body .turnout__results {
-    display: flex;
-    text-align: center;
-    max-width: 700px;
-    justify-content: space-between;
+body .turnout .turnout__results {
     margin: 60px auto 40px auto;
 }
 
-body .turnout__result {
-    flex: 1 1 20%;
-}
-
-body .turnout__resultItem {
+body .turnout .turnout__resultItem {
     position: relative;
-    margin: 10px 0px;
 }
 
-body .turnout__resultItem:before {
-    position: absolute;
-    content: " ";
+body .turnout .turnout__subheadline {
     display: block;
-    height: 1px;
-    background: #d6d6d6;
-    top: 33%;
-    left: 0px;
-    right: 0px;
-    text-align: center;
-}
-
-body .turnout__resultItem:after {
-    position: absolute;
-    content: " ";
-    display: block;
-    height: 1px;
-    background: #d6d6d6;
-    top: 66%;
-    left: 0px;
-    right: 0px;
-    text-align: center;
-}
-
-body .turnout__headline {
-    font-family: 'Droid Serif', serif;
-    font-size: 42px;
-    color: #415175;
-    text-align: center;
-    line-height: 140%;
-}
-
-body .turnout__subheadline {
     text-align: center;
     margin: 0px;
 }
 
-body .turnout__resultScore {
+body .turnout .turnout__resultScore {
     font-family: 'Droid Serif', serif;
     font-size: 24px;
     font-weight: 700;
 }
 
-body .turnout__resultUntil {
+body .turnout .turnout__resultUntil {
     font-size: 16px;
     color: #d54444;
     line-height: 18px;
     font-weight: 400;
-    margin-top: 5px;
     text-transform: uppercase;
-    white-space: nowrap;
 }
 
-body .turnout__resultBarWrap {
+body .turnout .turnout__resultBarWrap {
     width: 34px;
     height: 250px;
     background: transparent;
 }
 
-body .turnout__resultBarWrap--highest .turnout__resultBar {
+body .turnout .turnout__resultBarWrap--latest .turnout__resultBar {
     background: #d54444;
     opacity: 0.9;
 }
 
-body .turnout__resultBar {
+body .turnout .turnout__resultBar {
     width: 34px;
     background: #415175;
-    opacity: 0.7;
-    bottom: -2px;
 }
 
-body .turnout__resultYear {
+body .turnout .turnout__resultYear {
     font-size: 18px;
     font-weight: 400;
 }
@@ -598,7 +583,7 @@ body .turnout__resultYear {
     }
 
     body article blockquote p {
-        font-size: 30px;
+        font-size: 26px;
     }
 
     body .header-bar .btn {
@@ -633,39 +618,42 @@ body .turnout__resultYear {
         margin-bottom: 10px;
     }
 
-    body .results__headline, body .turnout__headline {
-        font-size: 32px;
-    }
-
-    body .result__item {
+    body .results .result__item {
         flex-direction: column;
+        align-items: stretch;
     }
 
-    body .result__candidateWrap {
+    body .results .result__candidateWrap {
         text-align: center;
         margin-top: 10px;
+        margin-left: 0px;
     }
 
-    body .result__itemImage {
+    body .results .result__itemImage {
         width: 90px;
         height: 90px;
+        margin: 0 auto;
     }
 
-    body .result__candidateName {
+    body .results .result__candidateName {
         margin: 10px 0px;
         display: block;
     }
 
-    body .result__candidateScore {
+    body .results .result__candidateScore {
         display: block;
         float: none;
     }
+    
+    body .results .result__candidateBarWrap {
+        margin: 20px 0px;
+    }
 
-    body .turnout__resultScore {
+    body .turnout .turnout__resultScore {
         font-size: 16px;
     }
 
-    body .turnout__resultUntil {
+    body .turnout .turnout__resultUntil {
         font-size: 14px;
     }
 }
