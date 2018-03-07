@@ -376,7 +376,7 @@ body .results {
     max-width: none;
 }
 
-body .results .results__headline, body .turnout .turnout__headline {
+body .results span.results__headline, body .turnout span.turnout__headline {
     font-family: 'Droid Serif', serif;
     font-size: 2.1em;
     color: #415175;
@@ -395,7 +395,7 @@ body .results .result__item {
 }
 
 body .results .result__candidateWrap {
-    margin-left: -7px;
+    margin-left: -20px;
     z-index: 1;
 }
 
@@ -439,6 +439,10 @@ body .results .result__itemImage {
     z-index: 2;
 }
 
+body .results .result__itemImage img {
+    
+}
+
 body .results .result__candidateBarWrap {
     height: 30px;
 }
@@ -448,22 +452,26 @@ body .results .result__candidateBar {
 }
 
 body .results .result__candidateParty {
+    display: inline-block;
     font-size: 18px;
-    margin-left: 20px;
+    margin-left: 40px;
 }
 
 body .results .result__candidateName {
+    display: inline-block;
     font-family: 'Droid Serif', serif;
     font-size: 20px;
     font-weight: 700;
-    margin-left: 20px;
+    margin-left: 40px;
 }
 
 body .results .result__candidateScore {
+    position: relative;
     font-family: 'Droid Serif', serif;
     font-size: 1.8em;
     font-weight: 700;
     line-height: 20px;
+    z-index: 1;
 }
 
 body .results .result__pollSource {
@@ -647,6 +655,10 @@ body .turnout .turnout__resultYear {
     
     body .results .result__candidateBarWrap {
         margin: 20px 0px;
+    }
+
+    body .results .result__candidateParty {
+        margin-left: 0px;
     }
 
     body .turnout .turnout__resultScore {
